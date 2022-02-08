@@ -12,8 +12,7 @@ import React, { useState } from "react";
 import Colors from "../constants/Colors";
 import { useDispatch } from "react-redux";
 import { update } from "../Redux/userSlice";
-import AsyncStorageLib from "@react-native-async-storage/async-storage";
-import { useEffect } from "react";
+
 
 const Login = ({ navigation }) => {
 
@@ -26,7 +25,7 @@ const Login = ({ navigation }) => {
   };
 
   const handleInput = () => {
-    if (name.length == 0 || name.length < 2) {
+    if (name.length == 0) {
       Alert.alert("Please enter your whole name");
     } else {
      dispatch(update({ name }));
@@ -34,7 +33,6 @@ const Login = ({ navigation }) => {
     }
   };
 
- 
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

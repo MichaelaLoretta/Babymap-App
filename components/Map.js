@@ -4,7 +4,7 @@ import MapView, { Marker, Callout } from "react-native-maps";
 import PlacesInfo from "./PlacesInfo";
 import { useState } from "react";
 
-const Map = () => {
+const Map = (props) => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -13,8 +13,9 @@ const Map = () => {
         style={{ flex: 1 }}
         mapType="mutedStandard"
         initialRegion={{
-          latitude: 59.33422,
-          longitude: 18.06098,
+
+          latitude: props.lat, 
+          longitude: props.long, 
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
@@ -30,6 +31,7 @@ const Map = () => {
           </Callout>
         </Marker>
       </MapView>
+      
     </View>
   );
 };
