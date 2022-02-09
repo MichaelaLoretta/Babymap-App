@@ -15,6 +15,7 @@ const PickMap = () => {
   const updateCoordinates = (long, lat) => {
     setLatitude(lat);
     setLongitude(long);
+    
   }; //uppdatera koordinaterna så kartan ändras beroende på knapptryck
 
   return (

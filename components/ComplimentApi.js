@@ -5,7 +5,6 @@ import Colors from "../constants/Colors";
 const ComplimentApi = () => {
   const [data, setData] = useState([]);
 
-  console.log(data);
   useEffect(() => {
     fetch("https://www.affirmations.dev/")
       .then((response) => response.json())

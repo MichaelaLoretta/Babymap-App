@@ -2,10 +2,11 @@ import { StyleSheet, View, Text } from "react-native";
 import React from "react";
 import MapView, { Marker, Callout } from "react-native-maps";
 import PlacesInfo from "./PlacesInfo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Map = (props) => {
   const [visible, setVisible] = useState(false);
+  const [rerender, setRerender] = useState(false);
 
   return (
     <View style={{ width: 310, height: 310 }}>
@@ -13,7 +14,7 @@ const Map = (props) => {
         style={{ flex: 1 }}
         mapType="mutedStandard"
         initialRegion={{
-          latitude: props.lat, //dynamiska koordinater från PickMap MEN just nu uppdateras inte kartan
+          latitude: props.lat, //dynamiska koordinater från PickMap MEN just nu uppdateras inte koordinaterna
           longitude: props.long,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,

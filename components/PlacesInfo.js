@@ -28,51 +28,44 @@ const PlacesInfo = ({ visible, setVisible }) => {
 
   return (
     <Modal transparent visible={showModal} animationType="slide">
-      <View style={styles.modal}>
-        <View style={styles.modalInner}>
-          <View style={{ alignItems: "center" }}>
-            <View style={styles.header}>
-              <TouchableOpacity
-                onPress={() => {
-                  setVisible(false);
-                }}
-              >
-                <Icon
-                  name="close"
-                  type="ionicon"
-                  color={Colors.text}
-                  size={25}
-                />
-              </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
+      <View style={styles.modalInner}>
+        <View style={{ alignItems: "center" }}>
+          <View style={styles.header}>
+            <TouchableOpacity
+              onPress={() => {
+                setVisible(false);
               }}
             >
-              <View
-                style={{
-                  borderRadius: 34,
-                  overflow: "hidden",
-                  marginVertical: 5,
-                }}
-              >
-                <Image
-                  source={require("../assets/img/cozycafe.jpg")}
-                  style={styles.image}
-                />
-              </View>
-              <View style={{ padding: 5 }}>
-                <Text style={styles.modalText}>Bibliotekets Café</Text>
-                <Text style={styles.modalText}>Drottninggatan 63</Text>
-                <View style={{ marginLeft: 5 }}>
-                  <Text>- Micro</Text>
-                  <Text>- Fåtöljer</Text>
-                  <Text>- Leksaker</Text>
-                  <Text>- Skötbord</Text>
-                </View>
+              <Icon name="close" type="ionicon" color={Colors.text} size={25} />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <View
+              style={{
+                borderRadius: 34,
+                overflow: "hidden",
+                marginVertical: 5,
+              }}
+            >
+              <Image
+                source={require("../assets/img/cozycafe.jpg")}
+                style={styles.image}
+              />
+            </View>
+            <View style={{ padding: 5 }}>
+              <Text style={styles.modalText}>Bibliotekets Café</Text>
+              <Text style={styles.modalText}>Drottninggatan 63</Text>
+              <View style={{ marginLeft: 5 }}>
+                <Text>- Micro</Text>
+                <Text>- Fåtöljer</Text>
+                <Text>- Leksaker</Text>
+                <Text>- Skötbord</Text>
               </View>
             </View>
           </View>
@@ -85,12 +78,6 @@ const PlacesInfo = ({ visible, setVisible }) => {
 export default PlacesInfo;
 
 const styles = StyleSheet.create({
-  modal: {
-    flex: 1,
-    backgroundColor: "#00000000",
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
   modalInner: {
     backgroundColor: Colors.prime,
     width: 350,
