@@ -12,11 +12,11 @@ const PickMap = () => {
   const diaper = require("../assets/img/DiaperIcon.png");
   const play = require("../assets/img/PlayIcon.png");
 
-  /* const updateCoordinates = (long, lat) => {
-    setLatitude(long);
-    setLongitude(lat);
-  };  //denna funktion skulle uppdatera koordinaterna som sedan skulle skickas till Map component
- */
+  const updateCoordinates = (long, lat) => {
+    setLatitude(lat);
+    setLongitude(long);
+  }; //uppdatera koordinaterna så kartan ändras beroende på knapptryck
+
   return (
     <View style={styles.screen}>
       <View style={{ flex: 1, justifyContent: "center" }}>
@@ -30,17 +30,17 @@ const PickMap = () => {
       </View>
 
       <View style={styles.btnBox}>
-        <TouchableOpacity onPress={() => { //Här ville jag eg ha funktionen updateCoordinates som skulle skicka vidare koordinaterna
-          setLatitude(59.33422);
-          setLongitude(18.06098);
-        }}>
+        <TouchableOpacity
+          onPress={() => {
+            updateCoordinates(18.06098, 59.33422);
+          }}
+        >
           <MyIcon source={feed} title="Feed" />
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => {
-            setLatitude(59.30828);
-            setLongitude(18.07584);
+            updateCoordinates(18.07584, 59.30828);
           }}
         >
           <MyIcon source={diaper} title="Diaper" />
@@ -48,8 +48,7 @@ const PickMap = () => {
 
         <TouchableOpacity
           onPress={() => {
-            setLatitude(59.3412);
-            setLongitude(18.05651);
+            updateCoordinates(18.05651, 59.3412);
           }}
         >
           <MyIcon source={play} title="Play" />

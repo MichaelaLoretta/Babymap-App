@@ -13,15 +13,14 @@ const Map = (props) => {
         style={{ flex: 1 }}
         mapType="mutedStandard"
         initialRegion={{
-
-          latitude: props.lat, 
-          longitude: props.long, 
+          latitude: props.lat, //dynamiska koordinater från PickMap MEN just nu uppdateras inte kartan
+          longitude: props.long,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
       >
         <Marker
-          coordinate={{ latitude: 59.334591, longitude: 18.06324 }}
+          coordinate={{ latitude: props.lat, longitude: props.long }} //Dynamiska koordinater
           onPress={() => {
             setVisible(true);
           }}
@@ -31,7 +30,6 @@ const Map = (props) => {
           </Callout>
         </Marker>
       </MapView>
-      
     </View>
   );
 };
