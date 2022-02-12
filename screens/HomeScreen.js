@@ -23,9 +23,8 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-        <Header />
-      </TouchableOpacity>
+      <Header navigation={navigation} />
+
       <View style={{ alignItems: "center" }}>
         <View style={styles.msgView}>
           <Text style={{ fontSize: 19, textAlign: "center" }}>{message}</Text>
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   msgView: {
-    backgroundColor: Colors.sec,
+    backgroundColor: "#00000000",
     padding: 9,
     borderRadius: 15,
     marginTop: 20,

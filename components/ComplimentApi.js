@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import Colors from "../constants/Colors";
+
 
 const ComplimentApi = () => {
   const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ const ComplimentApi = () => {
   return (
     <View
       style={{
-        backgroundColor: Colors.sec,
+        backgroundColor: "#00000000",
         padding: 10,
         borderRadius: 15,
         margin: 20,

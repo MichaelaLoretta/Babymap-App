@@ -8,9 +8,9 @@ import ComplimentApi from "../components/ComplimentApi";
 const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-        <Header />
-      </TouchableOpacity>
+    
+        <Header navigation={navigation} />
+      
       <Login navigation={navigation} />
       <ComplimentApi />
     </SafeAreaView>

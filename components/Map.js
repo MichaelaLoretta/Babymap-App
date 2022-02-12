@@ -1,12 +1,11 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View} from "react-native";
 import React from "react";
 import MapView, { Marker, Callout } from "react-native-maps";
 import PlacesInfo from "./PlacesInfo";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Map = (props) => {
   const [visible, setVisible] = useState(false);
-  const [rerender, setRerender] = useState(false);
 
   return (
     <View style={{ width: 310, height: 310 }}>

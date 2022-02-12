@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const PlacesInfo = ({ visible, setVisible }) => {
   const [showModal, setShowModal] = useState(visible);
@@ -32,6 +33,14 @@ const PlacesInfo = ({ visible, setVisible }) => {
         <View style={styles.modalInner}>
           <View style={{ alignItems: "center" }}>
             <View style={styles.header}>
+              <TouchableOpacity>
+                <Icon
+                  name="star"
+                  type="ionicon"
+                  color={Colors.accent}
+                  size={25}
+                />
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
                   setVisible(false);
@@ -109,8 +118,9 @@ const styles = StyleSheet.create({
   header: {
     width: "100%",
     height: "20%",
-    alignItems: "flex-end",
-    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   image: {
     width: 140,
